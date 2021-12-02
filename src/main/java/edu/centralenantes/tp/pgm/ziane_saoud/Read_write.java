@@ -5,11 +5,11 @@
  */
 package edu.centralenantes.tp.pgm.ziane_saoud;
 
-import java.io.DataInputStream;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.util.Scanner;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import javax.imageio.ImageIO;
 
 
 /**
@@ -19,6 +19,15 @@ import java.io.IOException;
 public class Read_write {
     
     private String file;
+    private BufferedImage image ;
+
+    public BufferedImage getImage() {
+        return image;
+    }
+
+    public void setImage(BufferedImage image) {
+        this.image = image;
+    }
 
     public Read_write(String file) {
         this.file = file;
@@ -31,8 +40,6 @@ public class Read_write {
     public void setFile(String file) {
         this.file = file;
     }
-    
-    
     
     public void read() throws FileNotFoundException, IOException{
         
@@ -54,13 +61,33 @@ public class Read_write {
         
         int[][] data2D = new int[picHeight][picWidth];
         for (int row = 0; row < picHeight; row++) {
-        for (int col = 0; col < picWidth; col++) {
-            data2D[row][col] = dis.readUnsignedByte();
-            //System.out.print(data2D[row][col] + " ");
+            for (int col = 0; col < picWidth; col++) {
+                data2D[row][col] = dis.readUnsignedByte();
+                //System.out.print(data2D[row][col] + " ");
             }
         }
         
-        System.out.println(data2D.toString());
+        
+            
+            for(int i=0; i<picHeight; i++) {
+                for(int j=0; j<picWidth; j++) {
+                    int a = data2D[i][j];
+                    Color newColor = new Color(a,a,a);
+                    this.image.setRGB(j,i,newColor.getRGB());
+                    System.out.println("image construite");
+                }
+            }
+            
+            File output = new File(this.file+".jpg");
+            ImageIO.write(this.image, "jpg", output);
+            
+            
+        
+
+        
+        
+      
     }
+
     
 }
