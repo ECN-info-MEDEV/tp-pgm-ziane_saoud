@@ -5,15 +5,23 @@
  */
 package edu.centralenantes.tp.pgm.ziane_saoud;
 
+import java.io.IOException;
+
 /**
  *
  * @author X
  */
 public class ClassMain {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
+        String file = "baboon.pgm";
+        
+        Read_write read = new Read_write(file);
+        
+        read.read();
         
     }
+    
     
 }
