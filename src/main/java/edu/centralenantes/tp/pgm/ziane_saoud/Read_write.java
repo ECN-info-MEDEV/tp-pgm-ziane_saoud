@@ -19,7 +19,7 @@ import javax.imageio.ImageIO;
 public class Read_write {
     
     private String file;
-    private BufferedImage image ;
+    private BufferedImage image = new BufferedImage(100, 100, 255);
 
     public BufferedImage getImage() {
         return image;
@@ -67,8 +67,8 @@ public class Read_write {
             }
         }
         
-        
-            
+        try {
+            this.image.setRGB(picHeight, picWidth, maxvalue);
             for(int i=0; i<picHeight; i++) {
                 for(int j=0; j<picWidth; j++) {
                     int a = data2D[i][j];
@@ -82,9 +82,9 @@ public class Read_write {
             ImageIO.write(this.image, "jpg", output);
             
             
-        
+        }
 
-        
+        catch(Exception e) {System.out.println("une erreur");}
         
       
     }
