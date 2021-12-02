@@ -4,16 +4,11 @@
  * and open the template in the editor.
  */
 package edu.centralenantes.tp.pgm.ziane_saoud;
- import java.io.*;
+
 /**
  *
- * @author X
+ * @author pc
  */
-public class ClassMain {
+public class ReadFile {
     
-    public static void main(String[] args) {
-        
-        
- }
-  
 }
