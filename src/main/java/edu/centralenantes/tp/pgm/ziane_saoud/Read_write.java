@@ -19,7 +19,7 @@ import javax.imageio.ImageIO;
 public class Read_write {
     
     private String file;
-    private BufferedImage image = new BufferedImage(100, 100, 255);
+    private BufferedImage image = new BufferedImage(255, 255, BufferedImage.TYPE_4BYTE_ABGR);
 
     public BufferedImage getImage() {
         return image;
@@ -67,7 +67,7 @@ public class Read_write {
             }
         }
         
-        try {
+        
             this.image.setRGB(picHeight, picWidth, maxvalue);
             for(int i=0; i<picHeight; i++) {
                 for(int j=0; j<picWidth; j++) {
@@ -82,9 +82,6 @@ public class Read_write {
             ImageIO.write(this.image, "jpg", output);
             
             
-        }
-
-        catch(Exception e) {System.out.println("une erreur");}
         
       
     }
