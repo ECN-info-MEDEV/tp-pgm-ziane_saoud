@@ -4,17 +4,12 @@
  * and open the template in the editor.
  */
 package edu.centralenantes.tp.pgm.ziane_saoud;
-<<<<<<< HEAD
-
-import java.io.IOException;
-
-=======
-
 
 import java.io.IOException;
 
 
->>>>>>> b26d616386243d362840d3e821e4ecadcea62f07
+
+
  import java.io.*;
 
 /**
@@ -22,11 +17,7 @@ import java.io.IOException;
  * @author X
  */
 public class ClassMain {
-<<<<<<< HEAD
-=======
 
-    
->>>>>>> b26d616386243d362840d3e821e4ecadcea62f07
     public static void main(String[] args) throws IOException {
         
         String file = "baboon.pgm";
@@ -36,11 +27,4 @@ public class ClassMain {
         read.read();
         
     }
-<<<<<<< HEAD
- 
-=======
-    
-    
-
->>>>>>> b26d616386243d362840d3e821e4ecadcea62f07
 }

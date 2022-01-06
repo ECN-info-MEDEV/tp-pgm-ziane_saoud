@@ -19,11 +19,7 @@ import javax.imageio.ImageIO;
 public class Read_write {
     
     private String file;
-<<<<<<< HEAD
     private BufferedImage image = new BufferedImage(800, 800, BufferedImage.TYPE_4BYTE_ABGR);
-=======
-    private BufferedImage image = new BufferedImage(255, 255, BufferedImage.TYPE_4BYTE_ABGR);
->>>>>>> b26d616386243d362840d3e821e4ecadcea62f07
 
     public BufferedImage getImage() {
         return image;
@@ -69,31 +65,26 @@ public class Read_write {
                 data2D[row][col] = dis.readUnsignedByte();
                 //System.out.print(data2D[row][col] + " ");
             }
+             //System.out.print("\n");
         }
-<<<<<<< HEAD
-=======
-        
-        
->>>>>>> b26d616386243d362840d3e821e4ecadcea62f07
             this.image.setRGB(picHeight, picWidth, maxvalue);
             for(int i=0; i<picHeight; i++) {
                 for(int j=0; j<picWidth; j++) {
                     int a = data2D[i][j];
                     Color newColor = new Color(a,a,a);
                     this.image.setRGB(j,i,newColor.getRGB());
-                    System.out.println("image construite");
+                    //System.out.println("image construite");
                 }
+               System.out.println("image construite");
+
             }
-            
             File output = new File(this.file+".jpg");
+            System.out.print("Done\n");
             ImageIO.write(this.image, "jpg", output);
+            System.out.print("Done2");
+
             
-<<<<<<< HEAD
-=======
-            
-        
-      
->>>>>>> b26d616386243d362840d3e821e4ecadcea62f07
+
     }
 
     
